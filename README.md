@@ -13,6 +13,7 @@ PaperTriage is maintained as a lightweight personal tool. The public page focuse
 ## Pages
 
 - `index.html`: project landing page
+- `demo-report.html`: sample HTML report output
 - `poster.html`: printable one-page product poster
 - `assets/wechat-pay.png`: payment QR image used on the landing page
 

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaperTriage Demo Report</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #172033; background: #f5f7fb; }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 18px; }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    p { color: #5b6678; }
+    .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 24px 0; }
+    .stat { padding: 16px; border: 1px solid #dbe1ea; border-radius: 8px; background: white; }
+    .stat strong { display: block; font-size: 28px; color: #0f766e; }
+    .table-wrap { overflow-x: auto; border: 1px solid #dbe1ea; border-radius: 8px; background: white; }
+    table { width: 100%; min-width: 920px; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e6ebf2; text-align: left; vertical-align: top; }
+    th { background: #eef3f8; color: #445064; }
+    code { white-space: nowrap; }
+    @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>PaperTriage Demo Report</h1>
+    <p>Example report showing what the paid tool or cleanup service returns.</p>
+    <section class="stats">
+      <div class="stat"><span>Total</span><strong>3</strong></div>
+      <div class="stat"><span>With DOI</span><strong>2</strong></div>
+      <div class="stat"><span>With year</span><strong>2</strong></div>
+      <div class="stat"><span>Duplicates</span><strong>1</strong></div>
+      <div class="stat"><span>Needs review</span><strong>3</strong></div>
+    </section>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th>Title</th><th>DOI</th><th>Proposed name</th><th>Flags</th></tr></thead>
+        <tbody>
+          <tr><td>2024</td><td>Efficient Transformer Models for Scientific Document Understanding</td><td>10.1145/1234567.8901234</td><td><code>2024_Efficient_Transformer_Models_for_Scientific_Document_Understanding_1234567.8901234.pdf</code></td><td>fallback_extractor</td></tr>
+          <tr><td>2023</td><td>Graph Neural Networks for Molecular Property Prediction</td><td>10.1038/s41586-023-00001-2</td><td><code>2023_Graph_Neural_Networks_for_Molecular_Property_Prediction_s41586-023-00001-2.pdf</code></td><td>fallback_extractor</td></tr>
+          <tr><td>unknown</td><td>download</td><td>not found</td><td><code>no-year_download.pdf</code></td><td>missing_doi;missing_year;title_from_filename</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
