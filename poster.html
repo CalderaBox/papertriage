@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaperTriage 海报</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #e9edf3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: #152033;
+    }
+    .poster {
+      width: min(92vw, 720px);
+      aspect-ratio: 3 / 4;
+      padding: 44px;
+      background: #ffffff;
+      border: 1px solid #d8dde6;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 8vw, 72px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .sub {
+      margin: 12px 0 0;
+      font-size: clamp(18px, 3vw, 26px);
+      color: #546173;
+    }
+    .features {
+      align-self: center;
+      display: grid;
+      gap: 16px;
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 700;
+    }
+    .features div {
+      padding: 14px 18px;
+      background: #f4f7fb;
+      border-left: 6px solid #0f9f6e;
+    }
+    .bottom {
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 22px;
+      align-items: end;
+    }
+    .price {
+      font-size: clamp(32px, 6vw, 54px);
+      font-weight: 800;
+      color: #087d55;
+    }
+    .note {
+      margin-top: 8px;
+      color: #5d6878;
+      font-size: 18px;
+    }
+    img {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border: 1px solid #d8dde6;
+    }
+    @media (max-width: 560px) {
+      .poster { padding: 24px; }
+      .bottom { grid-template-columns: 1fr; }
+      img { width: 180px; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <header>
+      <h1>PaperTriage</h1>
+      <p class="sub">本地批量整理论文 PDF，生成 CSV / Markdown 文献库</p>
+    </header>
+    <section class="features">
+      <div>提取 DOI、年份、标题线索</div>
+      <div>识别重复论文，安全重命名</div>
+      <div>Python 脚本，本地运行</div>
+    </section>
+    <footer class="bottom">
+      <div>
+        <div class="price">75 元</div>
+        <div class="note">扫码付款，备注：PaperTriage</div>
+      </div>
+      <img src="../assets/wechat-pay.png" alt="微信支付收款码">
+    </footer>
+  </article>
+</body>
+</html>

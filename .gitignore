@@ -1,0 +1,12 @@
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.pem
+*_ed25519
+*_rsa
+.env
+.git-ssh/
+papertriage-output/
+__pycache__/

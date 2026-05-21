@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaperTriage | 75 元</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18212f;
+      --muted: #5d6878;
+      --line: #d8dde6;
+      --accent: #0f9f6e;
+      --accent-dark: #087d55;
+      --paper: #f6f8fb;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 20px 56px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 28px;
+      align-items: center;
+      padding: 36px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0 0 24px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 10px 14px;
+      border: 1px solid #bfe5d5;
+      background: #ecfbf5;
+      border-radius: 6px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+    .price strong { font-size: 28px; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a.button.secondary {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .pay {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      text-align: center;
+    }
+    .pay img {
+      width: min(100%, 320px);
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .pay p { margin: 12px 0 0; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .item {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .item h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .section {
+      margin-top: 22px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+    li { margin: 7px 0; }
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #eef2f7;
+    }
+    @media (max-width: 760px) {
+      main { padding: 18px 12px 32px; }
+      .hero { grid-template-columns: 1fr; padding: 22px; }
+      .grid { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      a.button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <h1>PaperTriage</h1>
+        <p class="lead">一个给研究人员用的本地论文 PDF 整理工具：批量扫描杂乱文献夹，提取 DOI/年份/标题线索，查重复，导出 CSV/Markdown 文献库，并安全生成规范化文件名。</p>
+        <div class="price"><strong>75 元</strong><span>约 10 美元，一次购买永久使用</span></div>
+        <div class="actions">
+          <a class="button" href="#pay">购买工具包</a>
+          <a class="button secondary" href="#pay">扫码付款</a>
+        </div>
+      </div>
+      <aside class="pay" id="pay">
+        <img src="./assets/wechat-pay.png" alt="微信支付收款码">
+        <p>付款备注：PaperTriage + 接收邮箱或 QQ。付款后发送工具包。</p>
+      </aside>
+    </section>
+
+    <section class="grid" aria-label="产品内容">
+      <div class="item">
+        <h2>批量扫描</h2>
+        <p>递归扫描论文 PDF，自动生成可检索的 CSV 和 Markdown 文献索引。</p>
+      </div>
+      <div class="item">
+        <h2>智能线索</h2>
+        <p>提取 DOI、年份、标题候选和文件哈希，快速发现重复下载的论文。</p>
+      </div>
+      <div class="item">
+        <h2>安全重命名</h2>
+        <p>默认 dry-run，不改原文件；确认后只创建规范命名的 PDF 副本。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>适合谁</h2>
+      <ul>
+        <li>下载了大量论文，文件名混乱，想快速整理阅读库的研究生。</li>
+        <li>需要把 PDF 文献列表导入 Excel、WPS、Obsidian 或 Notion 的论文作者。</li>
+        <li>需要在不上传论文、不泄露数据的情况下本地处理文献文件的人。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>交付文件</h2>
+      <p>工具包包含 <code>papertriage.py</code>、<code>papertriage_gui.py</code>、Windows 双击启动脚本、使用说明和授权文件。只需要 Python 3 即可运行；如果安装 PyMuPDF 或 pypdf，PDF 文本提取效果会更好。</p>
+      <p>付款时请备注接收邮箱或 QQ，工具包将按备注发送。公开页面不直接提供付费文件下载，以避免未付款访问。</p>
+    </section>
+  </main>
+</body>
+</html>
