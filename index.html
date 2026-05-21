@@ -142,10 +142,57 @@
       border-radius: 4px;
       background: #eef2f7;
     }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .plan {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .plan h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .plan strong {
+      display: block;
+      margin: 8px 0 10px;
+      color: var(--accent-dark);
+      font-size: 30px;
+    }
+    .sample {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      background: #f4f7fb;
+      font-weight: 700;
+    }
     @media (max-width: 760px) {
       main { padding: 18px 12px 32px; }
       .hero { grid-template-columns: 1fr; padding: 22px; }
       .grid { grid-template-columns: 1fr; }
+      .plans { grid-template-columns: 1fr; }
       .actions { flex-direction: column; }
       a.button { width: 100%; }
     }
@@ -156,16 +203,16 @@
     <section class="hero">
       <div>
         <h1>PaperTriage</h1>
-        <p class="lead">一个给研究人员用的本地论文 PDF 整理工具：批量扫描杂乱文献夹，提取 DOI/年份/标题线索，查重复，导出 CSV/Markdown 文献库，并安全生成规范化文件名。</p>
-        <div class="price"><strong>75 元</strong><span>约 10 美元，一次购买永久使用</span></div>
+        <p class="lead">给研究人员用的本地论文 PDF 整理工具和代整理服务：把杂乱的文献文件夹变成 CSV/Markdown 文献库、重复文件报告和规范命名的 PDF 副本。</p>
+        <div class="price"><strong>75 元起</strong><span>自助工具包或代整理服务</span></div>
         <div class="actions">
-          <a class="button" href="#pay">购买工具包</a>
+          <a class="button" href="#plans">查看套餐</a>
           <a class="button secondary" href="#pay">扫码付款</a>
         </div>
       </div>
       <aside class="pay" id="pay">
         <img src="./assets/wechat-pay.png" alt="微信支付收款码">
-        <p>付款备注：PaperTriage + 接收邮箱或 QQ。付款后发送工具包。</p>
+        <p>付款备注：PaperTriage + 套餐 + 接收邮箱或 QQ。付款后按备注交付。</p>
       </aside>
     </section>
 
@@ -184,6 +231,29 @@
       </div>
     </section>
 
+    <section class="plans" id="plans" aria-label="套餐">
+      <div class="plan">
+        <h2>自助工具包</h2>
+        <strong>75 元</strong>
+        <p>适合自己本地运行。交付 Windows 双击启动脚本、Python CLI、GUI、说明文档和授权文件。</p>
+        <ul>
+          <li>本地处理，不上传论文</li>
+          <li>导出 CSV / Markdown / JSON</li>
+          <li>支持 dry-run 安全重命名</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h2>代整理服务</h2>
+        <strong>149 元起</strong>
+        <p>适合不想折腾工具的人。发送不超过 200 个 PDF 的压缩包，返回整理后的文献索引和规范命名建议。</p>
+        <ul>
+          <li>交付 CSV / Markdown 文献库</li>
+          <li>重复文件和异常文件清单</li>
+          <li>24 小时内交付，超量另议</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section">
       <h2>适合谁</h2>
       <ul>
@@ -197,6 +267,36 @@
       <h2>交付文件</h2>
       <p>工具包包含 <code>papertriage.py</code>、<code>papertriage_gui.py</code>、Windows 双击启动脚本、使用说明和授权文件。只需要 Python 3 即可运行；如果安装 PyMuPDF 或 pypdf，PDF 文本提取效果会更好。</p>
       <p>付款时请备注接收邮箱或 QQ，工具包将按备注发送。公开页面不直接提供付费文件下载，以避免未付款访问。</p>
+    </section>
+
+    <section class="section">
+      <h2>样例输出</h2>
+      <div class="sample">
+        <table>
+          <thead>
+            <tr>
+              <th>year</th>
+              <th>title_guess</th>
+              <th>doi</th>
+              <th>proposed_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024</td>
+              <td>Efficient Transformer Models for Scientific Document Understanding</td>
+              <td>10.1145/1234567.8901234</td>
+              <td>2024_Efficient_Transformer_Models_for_Scientific_Document_Understanding_1234567.8901234.pdf</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>Graph Neural Networks for Molecular Property Prediction</td>
+              <td>10.1038/s41586-023-00001-2</td>
+              <td>2023_Graph_Neural_Networks_for_Molecular_Property_Prediction_s41586-023-00001-2.pdf</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 </body>

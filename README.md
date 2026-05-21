@@ -1,14 +1,14 @@
 # PaperTriage
 
-PaperTriage is a small local utility for researchers who keep large, messy folders of PDF papers.
+PaperTriage is a small local utility and cleanup service for researchers who keep large, messy folders of PDF papers.
 
 The tool is designed to help with a very specific workflow: scan a paper folder, extract useful clues such as DOI, year, and likely title, identify duplicate files, and prepare a cleaner literature index.
 
-This repository hosts the public landing page for the project.
+This repository hosts the public landing page for the project. Paid tool archives and customer delivery files are intentionally not stored here.
 
 ## Status
 
-PaperTriage is maintained as a lightweight personal tool. The public page focuses on the current Windows/Python release and may be updated as the workflow improves.
+PaperTriage is maintained as a lightweight personal tool. The public page focuses on the current Windows/Python release and the done-for-you cleanup service.
 
 ## Pages
 
